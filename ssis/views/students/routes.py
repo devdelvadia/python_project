@@ -194,7 +194,7 @@ def update(id: str) -> str:
 @student.route('/students/delete/<string:id>')
 def delete(id: str) -> str:
     data = Student().get_student(id)
-    delete_image(id)
+    # delete_image(id)
     Student().delete(id)
     flash(f'{data[0]} deleted from the database.', 'info')
     return redirect(url_for('student.students'))

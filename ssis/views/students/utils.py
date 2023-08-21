@@ -77,12 +77,12 @@ def update_student_record(student: list = None) -> bool:
 
 
 def save_image(file: str = None) -> str:
-    # parent_folder = os.path.dirname(os.path.dirname(os.path.dirname(__file__))) + \
-    #                     '/static/entity_photos/students'
-    # image = file
-    # filename = secure_filename(file.filename)
-    # image.save(os.path.join(parent_folder, filename))
-    # return filename
+    parent_folder = os.path.dirname(os.path.dirname(os.path.dirname(__file__))) + \
+                        '/static/entity_photos/students'
+    image = file
+    filename = secure_filename(file.filename)
+    image.save(os.path.join(parent_folder, filename))
+    return filename
     
     local_upload = 'local' == getenv('PHOTO_UPLOAD')
     if local_upload:
